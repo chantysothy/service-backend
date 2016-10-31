@@ -14,22 +14,22 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "MySQL"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "MySQL",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "MySQL",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "MySQL",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "MySQL",
     "public": false
   }
 }
