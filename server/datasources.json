@@ -1,11 +1,11 @@
 {
-  "MySQL" : {
-    "name" : "MySQL",
-    "connector": "mysql",
-    "database" : "service_db",
-    "host" : "localhost",
-    "password" : "spass",
-    "username" : "suser",
-    "port" : "3306"
+  "MySQL": {
+    "host": "localhost",
+    "port": "3306",
+    "database": "service_db",
+    "username": "suser",
+    "password": "spass",
+    "name": "MySQL",
+    "connector": "mysql"
   }
 }

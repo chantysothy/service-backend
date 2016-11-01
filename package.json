@@ -14,8 +14,11 @@
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.4.0",
+    "loopback-component-passport": "^2.3.0",
     "loopback-connector-mysql": "^2.4.0",
     "loopback-datasource-juggler": "^2.39.0",
+    "passport": "^0.3.2",
+    "passport-github2": "^0.1.10",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^1.0.1"
   },
