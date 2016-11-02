@@ -6,6 +6,8 @@ var GitHubStrategy = require('passport-github').Strategy;
 
 module.exports = function(app) {
 
+  var UsersModel = app.models.Users;
+
   var GITHUB_CLIENT_ID = 'cfa4df38c050e4ba324c';
   var GITHUB_CLIENT_SECRET = 'c94d67aae78e37c912c4a433cd1f8e135cea50f4';
 
@@ -15,12 +17,15 @@ module.exports = function(app) {
       callbackURL: "http://fpc:3000/auth/github/callback",
     },
     function(accessToken, refreshToken, profile, done) {
-      done(null,profile);
+      UsersModel.externalLoginOrCreate(profile, done);
     }
   ));
 
-  passport.serializeUser(function(user, done) {
-    done(null, user);
+  /* Здесь должна происходить сериализация пользователя но по факту входным
+   * параметром является токен.
+   */
+  passport.serializeUser(function(accessToken, done) {
+    done(null, accessToken);
   });
 
   app.use(passport.initialize());
@@ -32,7 +37,7 @@ module.exports = function(app) {
     '/auth/github/callback',
     passport.authenticate('github', { failureRedirect: '/login' }),
     function(req, res) {
-      res.json(req.user._json);
+      res.json(req.user);
     }
   );
 }
