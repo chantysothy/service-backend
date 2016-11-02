@@ -1,0 +1,21 @@
+{
+  "name": "Users",
+  "plural": "users",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "external" : {
+      "type" : "Boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "hidden" : ["external"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

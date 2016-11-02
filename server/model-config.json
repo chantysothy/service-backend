@@ -14,7 +14,8 @@
     ]
   },
   "User": {
-    "dataSource": "MySQL"
+    "dataSource": "MySQL",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "MySQL",
@@ -31,5 +32,9 @@
   "Role": {
     "dataSource": "MySQL",
     "public": false
+  },
+  "Users": {
+    "dataSource": "MySQL",
+    "public": true
   }
 }

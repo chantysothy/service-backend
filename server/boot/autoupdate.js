@@ -3,7 +3,8 @@
 module.exports = function(server) {
   var MySQLDataSource = server.dataSources.MySQL;
 
-  var applicationModels = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role'];
+  var applicationBuiltInModels = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role'];
+  var applicationModels = ['Users'];
 
   MySQLDataSource.isActual(applicationModels, function(err, actual) {
     if (!actual) {
@@ -11,5 +12,9 @@ module.exports = function(server) {
         if (err) throw (err);
       });
     }
+  });
+
+  MySQLDataSource.automigrate(applicationBuiltInModels, function(err) {
+    if (err) throw err;
   });
 }
