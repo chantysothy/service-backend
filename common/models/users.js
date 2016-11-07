@@ -6,7 +6,7 @@ module.exports = function(Users) {
     Users.findOne({ email: profile._json.email}, function(err, instance){
       var externalUserEror = new Error('User exist as interal but tryed to login as external');
       externalUserEror.statusCode = 422;
-      externalUserEror.code = 'INTERNAL_IS_EXTERNAL';
+      externalUserEror.code = 'INTERNAL_EXTERNAL_ERROR';
 
       if(err) return done(err, false);
 
